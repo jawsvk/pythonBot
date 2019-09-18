@@ -1,0 +1,43 @@
+<messageML>
+  <div class="entity" data-entity-id='Global Quote'>
+  <h3>${entity['Global Quote']['01. symbol']}</h3>
+  <card accent="tempo-bg-color--blue" iconSrc="./images/favicon.png">
+    <header>
+      <div>
+        ${entity['Global Quote']['05. price']}
+      </div>
+      <div style="color: ${entity['Global Quote']['change color']}">
+       ${entity['Global Quote']['09. change']} (${entity['Global Quote']['10. change percent']})
+      </div>
+    </header>
+    <body>
+      <table>
+        <tr>
+          <td>Open</td>
+          <td>${entity['Global Quote']['02. open']}</td>
+        </tr>
+        <tr>
+          <td>High</td>
+          <td>${entity['Global Quote']['03. high']}</td>
+        </tr>
+        <tr>
+          <td>Low</td>
+          <td>${entity['Global Quote']['04. low']}</td>
+        </tr>
+        <tr>
+          <td>Volume</td>
+          <td>${entity['Global Quote']['06. volume']}</td>
+        </tr>
+        <tr>
+          <td>Latest Trading Day</td>
+          <td>${entity['Global Quote']['07. latest trading day']}</td>
+        </tr>
+        <tr>
+          <td>Previous Close</td>
+          <td>${entity['Global Quote']['08. previous close']}</td>
+        </tr>
+      </table>
+    </body>
+  </card>
+  </div>
+</messageML>

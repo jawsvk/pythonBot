@@ -1,0 +1,71 @@
+2019-09-18 15:55:23,938 - root - DEBUG - Auth/authenticate()
+2019-09-18 15:55:23,939 - root - DEBUG - Auth/authenticate() --> needed to authenticate
+2019-09-18 15:55:23,939 - root - DEBUG - RSA_auth/get_session_token() function started
+2019-09-18 15:55:23,939 - root - DEBUG - RSA_auth/getJWT() function started
+2019-09-18 15:55:25,102 - root - DEBUG - RSA/session token success
+2019-09-18 15:55:25,103 - root - DEBUG - RSA_auth/get_keyauth()
+2019-09-18 15:55:25,103 - root - DEBUG - RSA_auth/getJWT() function started
+2019-09-18 15:55:26,122 - root - DEBUG - RSA/keymanager token success
+2019-09-18 15:55:26,123 - root - INFO - DataFeedEventService/startDataFeed()
+2019-09-18 15:55:26,123 - root - DEBUG - DataFeedClient/create_datafeed()
+2019-09-18 15:55:27,873 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:55:58,258 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:55:58,258 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:56:02,617 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': '0b87uBu7U_UrEEHr5n4Lz3___pK8oQW5bQ', 'timestamp': 1568793360966, 'message': '<div data-format="PresentationML" data-version="2.0" class="wysiwyg"><p>Hi</p></div>', 'data': '{}', 'user': {'userId': 347583113331852, 'firstName': 'Jawen', 'lastName': 'Voon', 'displayName': 'Jawen Voon', 'email': 'jawen.voon@zuhlke.com', 'username': 'jawen.voon@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'DESKTOP-40.0.0-10688-Windows-10-Chrome-76.0.3809.132', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 15:56:02,618 - root - DEBUG - UserClient/get_session_user()
+2019-09-18 15:56:03,795 - root - DEBUG - DataFeedEventService/handle_event()
+2019-09-18 15:56:03,795 - root - DEBUG - msg_sent_handler function started
+2019-09-18 15:56:03,796 - root - DEBUG - message received in IM
+2019-09-18 15:56:03,796 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 15:56:04,617 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:56:05,045 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': '5I2EJrqMAg-O-Z7OOI0hzX___pK8oP1AdA', 'timestamp': 1568793363141, 'message': '<div data-format="PresentationML" data-version="2.0">Yes Jawen yes!</div>', 'user': {'userId': 347583113331867, 'displayName': 'Z-bot-1', 'email': 'zsg_bot1@zuhlke.com', 'username': 'zsg_bot1@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'Agent-2.55.10-Linux-4.14.123-86.109.amzn1.x86_64', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 15:56:05,045 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:56:14,061 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': 'jHaX84VIFtSC7J3OvqBwz3___pK8oNi-bQ', 'timestamp': 1568793372481, 'message': '<div data-format="PresentationML" data-version="2.0" class="wysiwyg"><p> get me quote for A35.si</p></div>', 'data': '{}', 'user': {'userId': 347583113331852, 'firstName': 'Jawen', 'lastName': 'Voon', 'displayName': 'Jawen Voon', 'email': 'jawen.voon@zuhlke.com', 'username': 'jawen.voon@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'DESKTOP-40.0.0-10688-Windows-10-Chrome-76.0.3809.132', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 15:56:14,061 - root - DEBUG - DataFeedEventService/handle_event()
+2019-09-18 15:56:14,061 - root - DEBUG - msg_sent_handler function started
+2019-09-18 15:56:14,061 - root - DEBUG - message received in IM
+2019-09-18 15:56:14,061 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 15:56:15,816 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 15:56:16,277 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:56:16,701 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': '8LnTO-VV822qpKRauM74mX___pK8oNandA', 'timestamp': 1568793373020, 'message': '<div data-format="PresentationML" data-version="2.0">Ok, wait a bit while I retrieve quote for A35.SI...</div>', 'user': {'userId': 347583113331867, 'displayName': 'Z-bot-1', 'email': 'zsg_bot1@zuhlke.com', 'username': 'zsg_bot1@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'Agent-2.55.10-Linux-4.14.123-86.109.amzn1.x86_64', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 15:56:16,702 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:56:47,070 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:56:47,071 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:57:17,497 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:57:17,497 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:57:47,901 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:57:47,901 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:58:18,274 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:58:18,274 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:58:48,674 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:58:48,674 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:59:19,058 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:59:19,058 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 15:59:49,455 - root - DEBUG - DataFeedEventService() - no data coming in from datafeed --> read_datafeed()
+2019-09-18 15:59:49,456 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 16:00:05,968 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': '4empRtrX4EoriOhJ2QTr0X___pK8nU7dbQ', 'timestamp': 1568793604386, 'message': '<div data-format="PresentationML" data-version="2.0" class="wysiwyg"><p>quote O39.si</p></div>', 'data': '{}', 'user': {'userId': 347583113331852, 'firstName': 'Jawen', 'lastName': 'Voon', 'displayName': 'Jawen Voon', 'email': 'jawen.voon@zuhlke.com', 'username': 'jawen.voon@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'DESKTOP-40.0.0-10688-Windows-10-Chrome-76.0.3809.132', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 16:00:05,968 - root - DEBUG - DataFeedEventService/handle_event()
+2019-09-18 16:00:05,968 - root - DEBUG - msg_sent_handler function started
+2019-09-18 16:00:05,968 - root - DEBUG - message received in IM
+2019-09-18 16:00:05,969 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 16:00:07,827 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 16:00:08,310 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 16:00:08,726 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': 'Lj-BqVYbjHzMJ2MI0vQgzH___pK8nUzBdA', 'timestamp': 1568793604932, 'message': '<div data-format="PresentationML" data-version="2.0">Ok, wait a bit while I retrieve quote for O39.SI...</div>', 'user': {'userId': 347583113331867, 'displayName': 'Z-bot-1', 'email': 'zsg_bot1@zuhlke.com', 'username': 'zsg_bot1@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'Agent-2.55.10-Linux-4.14.123-86.109.amzn1.x86_64', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 16:00:08,726 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 16:00:23,662 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': 'pLEilG8S2VOyCzZwxSa1P3___pK8nQm-bQ', 'timestamp': 1568793622081, 'message': '<div data-format="PresentationML" data-version="2.0" class="wysiwyg"><p>get me quote for G3b.si</p></div>', 'data': '{}', 'user': {'userId': 347583113331852, 'firstName': 'Jawen', 'lastName': 'Voon', 'displayName': 'Jawen Voon', 'email': 'jawen.voon@zuhlke.com', 'username': 'jawen.voon@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'DESKTOP-40.0.0-10688-Windows-10-Chrome-76.0.3809.132', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 16:00:23,662 - root - DEBUG - DataFeedEventService/handle_event()
+2019-09-18 16:00:23,662 - root - DEBUG - msg_sent_handler function started
+2019-09-18 16:00:23,662 - root - DEBUG - message received in IM
+2019-09-18 16:00:23,662 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 16:00:25,225 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 16:00:25,664 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 16:00:26,039 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': 'M0Kjjt1r3drU9YTGfD9I4H___pK8nQeldA', 'timestamp': 1568793622623, 'message': '<div data-format="PresentationML" data-version="2.0">Ok, wait a bit while I retrieve quote for G3B.SI...</div>', 'user': {'userId': 347583113331867, 'displayName': 'Z-bot-1', 'email': 'zsg_bot1@zuhlke.com', 'username': 'zsg_bot1@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'Agent-2.55.10-Linux-4.14.123-86.109.amzn1.x86_64', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 16:00:26,040 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 16:00:50,438 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': 'Ajz6oQKmd7jF8IJvVWOyBX___pK8nKEobQ', 'timestamp': 1568793648855, 'message': '<div data-format="PresentationML" data-version="2.0" class="wysiwyg"><p>exit</p></div>', 'data': '{}', 'user': {'userId': 347583113331852, 'firstName': 'Jawen', 'lastName': 'Voon', 'displayName': 'Jawen Voon', 'email': 'jawen.voon@zuhlke.com', 'username': 'jawen.voon@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'DESKTOP-40.0.0-10688-Windows-10-Chrome-76.0.3809.132', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 16:00:50,438 - root - DEBUG - DataFeedEventService/handle_event()
+2019-09-18 16:00:50,438 - root - DEBUG - msg_sent_handler function started
+2019-09-18 16:00:50,438 - root - DEBUG - message received in IM
+2019-09-18 16:00:50,439 - root - DEBUG - MessageClient/send_msg()
+2019-09-18 16:00:50,897 - root - DEBUG - DataFeedClient/read_datafeed()
+2019-09-18 16:00:51,275 - root - DEBUG - DataFeedEventService/read_datafeed() --> Incoming data from read_datafeed(): {'messageSent': {'message': {'messageId': '6BzRcTADTY0qWZ6HaKQpWH___pK8nJ7ndA', 'timestamp': 1568793649437, 'message': '<div data-format="PresentationML" data-version="2.0">Yes Jawen yes!</div>', 'user': {'userId': 347583113331867, 'displayName': 'Z-bot-1', 'email': 'zsg_bot1@zuhlke.com', 'username': 'zsg_bot1@zuhlke.com'}, 'stream': {'streamId': 'wfYseMggvajJ4wOHl9y8MX___pLq2vfwdA', 'streamType': 'IM'}, 'externalRecipients': False, 'userAgent': 'Agent-2.55.10-Linux-4.14.123-86.109.amzn1.x86_64', 'originalFormat': 'com.symphony.messageml.v2'}}}
+2019-09-18 16:00:51,275 - root - DEBUG - DataFeedClient/read_datafeed()

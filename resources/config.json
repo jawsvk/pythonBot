@@ -1,0 +1,27 @@
+{
+    "sessionAuthHost": "develop.symphony.com",
+    "sessionAuthPort": 443,
+    "keyAuthHost": "develop.symphony.com",
+    "keyAuthPort": 443,
+    "podHost": "develop.symphony.com",
+    "podPort": 443,
+    "agentHost": "develop.symphony.com",
+    "agentPort": 443,
+    "authType": "rsa",
+    "botCertPath": "",
+    "botCertName": "",
+    "botCertPassword": "",
+    "botPrivateKeyPath": "C:/Users/javo/Symphony/pythonBot/rsa/",
+    "botPrivateKeyName": "zuhlke_privatekey.pem",
+    "botUsername": "zsg_bot1@zuhlke.com",
+    "botEmailAddress": "zsg_bot1@zuhlke.com",
+    "appCertPath": "",
+    "appCertName": "",
+    "appCertPassword": "",
+    "proxyURL": "",
+    "proxyUsername": "",
+    "proxyPassword": "",
+    "authTokenRefreshPeriod": "30",
+    "truststorePath": ""
+}
+
