@@ -31,6 +31,28 @@ def msg_format(message, msg_style, entity=None):
             )
 
 
+def get_quote(symbol):
+    quote = AlphaVantage.get_stock_global_quote(symbol)
+    if 'Error Message' in quote:
+        msg_to_send = msg_format("Can't seem to find it, are you sure that's the right symbol?", SIMPLE)
+    else:
+        quote['Global Quote']['change color'] = 'green' \
+            if float(quote['Global Quote']['09. change']) > 0 \
+            else 'red'
+        msg_to_send = msg_format('', WITH_QUOTE, entity=quote)
+    return msg_to_send
+
+
+def get_graph(symbol):
+    data = AlphaVantage.get_timeseries_daily(symbol, 'compact')
+    if 'Error Message' in data:
+        msg_to_send = msg_format("Can't seem to find it, are you sure that's the right symbol?", SIMPLE)
+    else:
+        msg_to_send = msg_format("Here's the graph", SIMPLE)
+
+    return msg_to_send
+
+
 class MessageProcessor:
 
     def __init__(self, bot_client):
@@ -43,18 +65,12 @@ class MessageProcessor:
 
         user = incoming_msg['user']
 
+        symbol = self.get_symbol_from_msg(incoming_msg, msg_txt)
         if "QUOTE" in msg_txt.upper():
-            symbol = self.get_symbol_from_msg(incoming_msg, msg_txt)
+            msg_to_send = get_quote(symbol)
 
-            quote = AlphaVantage.get_stock_global_quote(symbol)
-            if 'Error Message' in quote:
-                msg_to_send = msg_format("Can't seem to find it, are you sure that's the right symbol?", SIMPLE)
-            else:
-                quote['Global Quote']['change color'] = 'green' \
-                    if float(quote['Global Quote']['09. change']) > 0 \
-                    else 'red'
-                msg_to_send = msg_format('', WITH_QUOTE, entity=quote)
-
+        if "GRAPH" in msg_txt.upper():
+            msg_to_send = get_graph(symbol)
         else:
             msg_to_send = msg_format('Yes {} yes!'.format(user['firstName']), SIMPLE)
             print(msg_to_send)
