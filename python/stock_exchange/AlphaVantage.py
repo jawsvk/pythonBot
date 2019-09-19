@@ -14,9 +14,9 @@ def get_stock_global_quote(symbol):
     return response.json()
 
 
-def get_timeseries_daily(symbol):
+def get_timeseries_daily(symbol, output_size):
     parameters['function'] = 'TIME_SERIES_DAILY'
     parameters['symbol'] = symbol
-    parameters['outputsize'] = 'compact'
+    parameters['outputsize'] = output_size  # either 'full' or 'compact'
     response = requests.get(api_url_base, params=parameters)
     return response.json()
