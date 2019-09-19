@@ -53,6 +53,12 @@ def get_graph(symbol):
     return msg_to_send
 
 
+def get_symbol_from_msg(incoming_msg, msg_txt):
+    txt_array = msg_txt.split()
+    symbol = txt_array[len(txt_array) - 1].upper()
+    return symbol
+
+
 class MessageProcessor:
 
     def __init__(self, bot_client):
@@ -65,11 +71,13 @@ class MessageProcessor:
 
         user = incoming_msg['user']
 
-        symbol = self.get_symbol_from_msg(incoming_msg, msg_txt)
         if "QUOTE" in msg_txt.upper():
+            symbol = get_symbol_from_msg(incoming_msg, msg_txt)
+            self.send_quote_request_acknowledgement(incoming_msg, symbol)
             msg_to_send = get_quote(symbol)
 
-        if "GRAPH" in msg_txt.upper():
+        elif "GRAPH" or "CHART" in msg_txt.upper():
+            symbol = get_symbol_from_msg(incoming_msg, msg_txt)
             msg_to_send = get_graph(symbol)
         else:
             msg_to_send = msg_format('Yes {} yes!'.format(user['firstName']), SIMPLE)
@@ -78,12 +86,9 @@ class MessageProcessor:
         if msg_txt:
             self.send_msg(incoming_msg, msg_to_send)
 
-    def get_symbol_from_msg(self, incoming_msg, msg_txt):
-        txt_array = msg_txt.split()
-        symbol = txt_array[len(txt_array) - 1].upper()
+    def send_quote_request_acknowledgement(self, incoming_msg, symbol):
         msg_to_send = msg_format('Ok, wait a bit while I retrieve quote for {}...'.format(symbol), SIMPLE)
         self.send_msg(incoming_msg, msg_to_send)
-        return symbol
 
     def send_msg(self, incoming_msg, msg_to_send):
         stream_id = incoming_msg['stream']['streamId']
