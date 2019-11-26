@@ -1,3 +1,3 @@
 /python/logs/
-/rsa/
+rsa/*.*
 /resources/

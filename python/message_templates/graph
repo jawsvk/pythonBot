@@ -1,0 +1,6 @@
+<messageML>Here's the graph for ${entity['graph_img']['symbol']}
+    <br/>
+    <div class="entity" data-entity-id='graph_img'>
+    <img src="data:image/png;base64,${entity['graph_img']['payload']}"></img>
+    </div>
+</messageML>

@@ -1,11 +1,14 @@
+import base64
 import json
 import os
 import xml.etree.ElementTree as ET
 from .stock_exchange import AlphaVantage
+from .graph_generator import *
 
 # Message Styles
 SIMPLE = 'simple'
 WITH_QUOTE = 'message with QUOTE'
+WITH_GRAPH = 'message with GRAPH'
 
 
 def jprint(obj):
@@ -29,6 +32,14 @@ def msg_format(message, msg_style, entity=None):
                 message=string,
                 data=json.dumps(entity)
             )
+    elif msg_style == WITH_GRAPH:
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        with open(dir_path + '\\message_templates\\graph') as my_file:
+            string = my_file.read()
+            return dict(
+                message=string,
+                data=json.dumps(entity)
+            )
 
 
 def get_quote(symbol):
@@ -44,11 +55,18 @@ def get_quote(symbol):
 
 
 def get_graph(symbol):
-    data = AlphaVantage.get_timeseries_daily(symbol, 'compact')
-    if 'Error Message' in data:
+    daily_data = AlphaVantage.get_timeseries_daily(symbol, 'compact')
+    if 'Error Message' in daily_data:
         msg_to_send = msg_format("Can't seem to find it, are you sure that's the right symbol?", SIMPLE)
     else:
-        msg_to_send = msg_format("Here's the graph", SIMPLE)
+        plot(daily_data['Time Series (Daily)'])
+        with open('..//resources//plot-close.png', 'rb') as graph_image:
+            img = graph_image.read()
+            img_data = {'graph_img': {
+                'symbol': symbol,
+                'payload': base64.b64encode(img).decode('utf-8')
+            }}
+            msg_to_send = msg_format("Here's the graph", WITH_GRAPH, entity=img_data)
 
     return msg_to_send
 
@@ -78,7 +96,9 @@ class MessageProcessor:
 
         elif "GRAPH" or "CHART" in msg_txt.upper():
             symbol = get_symbol_from_msg(incoming_msg, msg_txt)
+            self.send_graph_request_acknowledgement(incoming_msg, symbol)
             msg_to_send = get_graph(symbol)
+
         else:
             msg_to_send = msg_format('Yes {} yes!'.format(user['firstName']), SIMPLE)
             print(msg_to_send)
@@ -88,6 +108,10 @@ class MessageProcessor:
 
     def send_quote_request_acknowledgement(self, incoming_msg, symbol):
         msg_to_send = msg_format('Ok, wait a bit while I retrieve quote for {}...'.format(symbol), SIMPLE)
+        self.send_msg(incoming_msg, msg_to_send)
+
+    def send_graph_request_acknowledgement(self, incoming_msg, symbol):
+        msg_to_send = msg_format('Ok, wait a bit while I plot graph for {}...'.format(symbol), SIMPLE)
         self.send_msg(incoming_msg, msg_to_send)
 
     def send_msg(self, incoming_msg, msg_to_send):
